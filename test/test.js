@@ -81,3 +81,34 @@ describe('string should be palindrome', () => {
         expect(isItPalindrome('government')).eq(false);
     });
 });
+
+const perimeterOfParallelepiped = (a, b) => {
+    if ((a <= 0 && b <= 0) || (typeof a !== 'number' && typeof b !== 'number')) return 'Not an integer'
+    else return a * 2 + b * 2;
+};
+
+describe('should return perimeter of parallelepiped', () => {
+    it('should return perimeter of parallelepiped with sides 4 and 6', () => {
+        expect(perimeterOfParallelepiped(4, 6)).eq(20);
+    });
+
+    it('should return perimeter of parallelepiped with sides 36 and 69', () => {
+        expect(perimeterOfParallelepiped(36, 69)).eq(210);
+    });
+
+    it('should return perimeter of parallelepiped with sides 4 and 6', () => {
+        expect(perimeterOfParallelepiped(200, 400)).eq(1200);
+    });
+
+    it('should return perimeter of parallelepiped with sides 4 and 6', () => {
+        expect(perimeterOfParallelepiped(12.5, 6.3)).eq(37.6);
+    });
+
+    it('should return perimeter of parallelepiped with sides 4 and 6', () => {
+        expect(perimeterOfParallelepiped(-4, -6)).eq('Not an integer');
+    });
+
+    it('should return perimeter of parallelepiped with sides 4 and 6', () => {
+        expect(perimeterOfParallelepiped(true, '-6')).eq('Not an integer');
+    });
+});
