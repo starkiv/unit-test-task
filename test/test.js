@@ -96,19 +96,19 @@ describe('should return perimeter of parallelepiped', () => {
         expect(perimeterOfParallelepiped(36, 69)).eq(210);
     });
 
-    it('should return perimeter of parallelepiped with sides 4 and 6', () => {
+    it('should return perimeter of parallelepiped with sides 200 and 400', () => {
         expect(perimeterOfParallelepiped(200, 400)).eq(1200);
     });
 
-    it('should return perimeter of parallelepiped with sides 4 and 6', () => {
+    it('should return perimeter of parallelepiped with sides 12.5 and 6.3', () => {
         expect(perimeterOfParallelepiped(12.5, 6.3)).eq(37.6);
     });
 
-    it('should return perimeter of parallelepiped with sides 4 and 6', () => {
+    it('should return perimeter of parallelepiped with sides -4 and -6', () => {
         expect(perimeterOfParallelepiped(-4, -6)).eq('Not an integer');
     });
 
-    it('should return perimeter of parallelepiped with sides 4 and 6', () => {
+    it('should return perimeter of parallelepiped with sides true and -"6"', () => {
         expect(perimeterOfParallelepiped(true, '-6')).eq('Not an integer');
     });
 });
