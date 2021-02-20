@@ -112,3 +112,31 @@ describe('should return perimeter of parallelepiped', () => {
         expect(perimeterOfParallelepiped(true, '-6')).eq('Not an integer');
     });
 });
+
+const speedControl = (speed) => {
+    if (typeof speed !== 'number' || speed < 0) return 'Not driver'
+    if ((speed <= 70) && (speed >= 0)) return 'Good driver';
+    else return 'Bad driver';
+};
+
+describe('should return "Bad driver" if speed highest then 70 mph', () => {
+    it('should return "Good driver" if speed lowest then 70 mph', () => {
+        expect(speedControl(55)).eq('Good driver');
+    });
+
+    it('should return "Bad driver" if speed highest then 70 mph', () => {
+        expect(speedControl(120)).eq('Bad driver');
+    });
+
+    it('should return "Not driver" if isn`t a speed', () => {
+        expect(speedControl('55')).eq('Not driver');
+    });
+
+    it('should return "Good driver" if speed lowest then 70 mph', () => {
+        expect(speedControl(0)).eq('Good driver');
+    });
+
+    it('should return "Not driver" if isn`t a speed', () => {
+        expect(speedControl(false)).eq('Not driver');
+    });
+});
