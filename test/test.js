@@ -140,3 +140,27 @@ describe('should return "Bad driver" if speed highest then 70 mph', () => {
         expect(speedControl(false)).eq('Not driver');
     });
 });
+
+const differentSubject = (el) => {
+    if (typeof el === 'number') return 'Mathematics';
+    if (typeof el === 'string') return 'English';
+    else return 'We have only 2 subjects'
+};
+
+describe('should return name of subject', () => {
+    it('should return "Mathematics" if type of el is number', () => {
+        expect(differentSubject(54)).eq('Mathematics');
+    });
+
+    it('should return "Mathematics" if type of el is number', () => {
+        expect(differentSubject('Mathematics')).eq('English');
+    });
+
+    it('should return "Mathematics" if type of el is number', () => {
+        expect(differentSubject(true)).eq('We have only 2 subjects');
+    });
+
+    it('should return "Mathematics" if type of el is number', () => {
+        expect(differentSubject(null)).eq('We have only 2 subjects');
+    });
+});
