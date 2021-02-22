@@ -164,3 +164,39 @@ describe('should return name of subject', () => {
         expect(differentSubject(null)).eq('We have only 2 subjects');
     });
 });
+
+const colorOfMilk = (color) => {
+    if (typeof color !== 'string') return 'It isn`t a milk';
+    if ((color === 'Yellow') || (color === 'Green') || (color === 'Blue') || (color === 'Brown')) return 'Bad condition'
+    if (color === 'White') {
+        return 'Good condition'
+    } else {
+        return 'It isn`t a milk'
+    }
+};
+
+describe('should return which condition milk has', () => {
+    it('should return "good condition" when color is white', () => {
+        expect(colorOfMilk('White')).eq('Good condition');
+    });
+
+    it('should return "good condition" when color is white', () => {
+        expect(colorOfMilk('Green')).eq('Bad condition');
+    });
+
+    it('should return "good condition" when color is white', () => {
+        expect(colorOfMilk('Beer')).eq('It isn`t a milk');
+    });
+
+    it('should return "good condition" when color is white', () => {
+        expect(colorOfMilk(54)).eq('It isn`t a milk');
+    });
+
+    it('should return "good condition" when color is white', () => {
+        expect(colorOfMilk(true)).eq('It isn`t a milk');
+    });
+
+    it('should return "good condition" when color is white', () => {
+        expect(colorOfMilk('Blue')).eq('Bad condition');
+    });
+});
